@@ -1,3 +1,11 @@
+// problem 4:
+// GET /status/{status_code} - Should return a response with a status code as specified in the request.
+
+//Problem 5:
+//GET /delay/{delay_in_seconds} - Should return a success response but after the specified delay in
+// the request. For example: If the request sent is GET /delay/3, then the server should wait
+// for 3 seconds and only then send a response with 200 status code.
+
 const http = require('http');
 const { getHTML, getJSON, getStatus } = require('./http');
 
