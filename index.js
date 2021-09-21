@@ -19,20 +19,20 @@ const server = http.createServer((req, res) => {
     default:
       if (req.url.startsWith('/status/')) {
         const statusCode = parseInt(
-          req.url.replace(/\/status\//gi, '') || '200'
+          req.url.replace(/\/status\//g, '') || '200'
         );
-        res.writeHead(parseInt(statusCode), {
-          'Context-Text': 'text/json',
-        });
+        if (statusCode != 100) {
+          res.writeHead(statusCode, {
+            'Context-Type': 'text/json',
+          });
+        }
         res.end(
           JSON.stringify({
             [statusCode]: http.STATUS_CODES[statusCode] || 'Unknow status',
           })
         );
       } else if (req.url.startsWith('/delay')) {
-        const delaySeconds = parseInt(
-          req.url.replace(/\/delay\//gi, '') || '0'
-        );
+        const delaySeconds = parseInt(req.url.replace(/\/delay\//g, '') || '0');
 
         setTimeout(() => {
           res.writeHead(200, {
