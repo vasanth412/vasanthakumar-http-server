@@ -7,7 +7,7 @@
 // for 3 seconds and only then send a response with 200 status code.
 
 const http = require('http');
-const { getHTML, getJSON, getStatus } = require('./http');
+const { getHTML, getJSON, getUUID } = require('./http');
 
 const server = http.createServer((req, res) => {
   if (req.method !== 'GET') {
@@ -22,7 +22,7 @@ const server = http.createServer((req, res) => {
       getJSON(req, res);
       break;
     case '/uuid':
-      getUuid(req, res);
+      getUUID(req, res);
       break;
     default:
       if (req.url.startsWith('/status/')) {

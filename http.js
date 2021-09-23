@@ -53,5 +53,3 @@ exports.getUUID = (req, res) => {
   const uuid = { uuid: uuid4() };
   res.end(`${JSON.stringify(uuid)}`);
 };
-
-exports.getStatus = (req, res) => {};
