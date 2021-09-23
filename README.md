@@ -4,13 +4,14 @@
 
 HTTP_Drill
 
+Express js framework used in this project instead of http module.
+
 ## **License**
 
 ISC - The ISC license is a permissive free software license published by the Internet Software Consortium, now called Internet Systems Consortium.
 
 ## **File directories**
 
-- lipsum.txt
 - http.js
 - index.js
 - .gitignore
